@@ -1,0 +1,12 @@
+[submodule "Web"]
+	path = Web
+	url = git@github.com:Cobaltians-Plugins/Plugins-Share-Web.git
+	branch = develop
+[submodule "iOS"]
+	path = iOS
+	url = git@github.com:Cobaltians-Plugins/Plugins-Share-iOS.git
+	branch = develop
+[submodule "Android"]
+	path = Android
+	url = git@github.com:Cobaltians-Plugins/Plugins-Share-Android.git
+	branch = develop
