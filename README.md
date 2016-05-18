@@ -12,107 +12,105 @@ ShareIntent plugin allows you to share file from the web or internal application
 
 use the `cobalt.share` shortcut like this:
 
-cobalt.shareItem(data, 'callback');
+```javascript
+cobalt.share(data: data, 'callback');```
+```javascript
+cobalt.share(data: data, function(result){...});```
 
 where data is a JSON Object like:
+
+```javascript
+var data = [{
+'type': 'image',
+'source': 'url',
+'path': 'http://example.com/images/cat.png',
+'title': 'Cat', // optional
+'detail': "playing with a goldfish" // optional
+}];```
 
 ### Examples
 
 If you like to share:
 
-1. Text
+1. **Text**
+
+```javascript
+cobalt.share({
+data: [{
+'type': 'text',
+'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYX',
+//'title': 'alphabet'
+}]
+}, 'callback');```
+
+2. **Contact**
+
+```javascript
+cobalt.share({
+data: [{
+'type': 'contact',
+'name': 'Jean Paul',
+'mobile': "0102030405",
+'email': 'jeanpaul@example.com', // optional
+'company': 'Cobaltians', // optional
+'postal': '1 City Hall SQ, RM 612, Boston, etc.', // optional
+'job': 'Human Resources', // optional
+'detail': 'foo', // optional
+}]
+}, 'callback');```
+
+3. **Image**
+
+```javascript
+cobalt.share({
+data: [{
+'type': 'image',
+'source': 'url',
+'path': 'http://example.com/images/cat.png',
+'title': 'Cat', // optional
+'detail': "playing with a goldfish" // optional
+}]
+}, 'callback');```
+
+4. **Others examples with different source or file type**
+
+Share a document stored in App local files (common assets (Android) or bundle (iOs))
+
+```javascript
 var data = [{
-   'type': 'text',
-   'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYX',
-   'title': 'alphabet' // optional
-}];
+'type': 'document',
+'source': 'local',
+'path': 'files/sample.pdf',
+}];```
 
-2. Contact
-var data = [{
-   'type': 'contact',
-   'name': 'Bernard Pivot',
-   'mobile': "0102030405",
-   'email': 'Monsieur.Chatouille@example.com', // optional
-   'company': 'Cobaltians', // optional
-   'postal': '1 rue chausette, Lannion, etc.', // optional
-   'job': 'Developer', // optional
-   'detail': 'some comments', // optional
-}];
+Share a video from web
 
-3. Image
-var data = [{
-   'type': 'image',
-   'source': 'url',
-   'path': 'http://example.com/images/cat.png',
-   'title': 'Cat', // optional
-   'detail': "playing with a goldfish" // optional
-}];
+```javascript
+cobalt.share({
+data: [{
+'type': 'video',
+'source': 'url',
+'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+'title': 'big buck bunny', // optional
+}]
+}, 'callback');```
 
-4. Others examples with different source or file type
-var data = [{
-   'type': 'image',
-   'source': 'resource',
-   'path': "mypicture.png",
-   'title': 'Cat', // optional
-   'detail': "playing with a goldfish" // optional
-}];
+### Current full returned fields are :
 
-var data = [{
-   'type': 'image',
-   'source': 'resource',
-   'id': app.page.myRessourceId // to get an id, use getResources().getIdentifier("nameofthefile", "drawable", getContext().getPackageName());
-   'title': 'Cat', // optional
-   'detail': "playing with a goldfish" // optional
-}];
-var data = [{
-    'type': 'document',
-    'source': 'url',
-    'path': "http://example.com/files/pdf-sample.pdf",
-}];
-var data = [{
-    'type': 'video',
-    'source': 'url',
-    'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
-}];
-var data = [{
-    'type': 'data',
-    'source': 'url',
-    'path': "https://example.com/master/gradlew.bat",
-    'title': 'A file from example.com', // optional
-    'detail': "With some details" // optional
-}];
+| Field | Description | Examples Values | Mandatory |
+| ----- | ---- | ----------- | ----------- |
+| source | source from where the file comes | 'url', 'local' | YES |
+| path | local/remote path of the file     | 'http://example.com/pixel.png', 'files/pixel.png' | YES |
+| type | file type   | 'text', 'image', 'contact', 'document', 'audio', 'video', 'data'| YES |
+| name | contact name     | 'Jean Paul' | YES |
+| mobile | contact number     | '+33201050602' | YES |
+| email | contact email     | 'jeanpaul@example.com' | NO |
+| company | contact company     | 'Jp Corp.' | NO |
+| postal | contact postal    | '1 City Hall SQ, RM 612, Boston' | NO |
+| job | contact job     | 'DRH' | NO |
+| title | contact title    | 'This is something' | NO |
+| detail | contact detail    | 'Some comments about this' | NO |
 
-//somewhere after cobalt inited
-cobalt.share({ TODO } function(result){
-   //TODO 
-});
-
-Current full returned fields are :
-
-| field | type | description |
-| ----- | ---- | ----------- |
-| TODO | string     | TODO |
-| TODO | string     | TODO |
-
-Sample : 
-
-    {
-        TODO : "TODO",
-        TODO : TODO
-    }
-
-### Other feature
-
-BLABLA
-
-Here is how to blabla :
-
-    //somewhere after cobalt inited
-    cobalt.share({
-        //TODO
-    });
-
-
-##Want more ?
+## Want more ?
 
 If you have any ideas or improvements to propose, please feel free to do so in the issues tracker!
