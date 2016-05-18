@@ -13,9 +13,11 @@ ShareIntent plugin allows you to share file from the web or internal application
 use the `cobalt.share` shortcut like this:
 
 ```javascript
-cobalt.share(data: data, 'callback');```
+cobalt.share(data: data, 'callback');
+```
 ```javascript
-cobalt.share(data: data, function(result){...});```
+cobalt.share(data: data, function(result){...});
+```
 
 where data is a JSON Object like:
 
@@ -26,7 +28,8 @@ var data = [{
 'path': 'http://example.com/images/cat.png',
 'title': 'Cat', // optional
 'detail': "playing with a goldfish" // optional
-}];```
+}];
+```
 
 ### Examples
 
@@ -41,7 +44,8 @@ data: [{
 'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYX',
 //'title': 'alphabet'
 }]
-}, 'callback');```
+}, 'callback');
+```
 
 2. **Contact**
 
@@ -57,7 +61,8 @@ data: [{
 'job': 'Human Resources', // optional
 'detail': 'foo', // optional
 }]
-}, 'callback');```
+}, 'callback');
+```
 
 3. **Image**
 
@@ -70,7 +75,8 @@ data: [{
 'title': 'Cat', // optional
 'detail': "playing with a goldfish" // optional
 }]
-}, 'callback');```
+}, 'callback');
+```
 
 4. **Others examples with different source or file type**
 
@@ -81,7 +87,8 @@ var data = [{
 'type': 'document',
 'source': 'local',
 'path': 'files/sample.pdf',
-}];```
+}];
+```
 
 Share a video from web
 
@@ -93,7 +100,8 @@ data: [{
 'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
 'title': 'big buck bunny', // optional
 }]
-}, 'callback');```
+}, 'callback');
+```
 
 ### Current full returned fields are :
 
