@@ -13,16 +13,19 @@ ShareIntent plugin allows you to share file from the web or internal application
 use the `cobalt.share` shortcut like this:
 
 ```javascript
-cobalt.share(data: data, 'callback');
-```
-```javascript
-cobalt.share(data: data, function(result){...});
+cobalt.share(data: myFileDatas);
 ```
 
-where data is a JSON Object like:
+or with a callback:
 
 ```javascript
-var data = [{
+cobalt.share(data: myFileDatas, function(result){...});
+```
+
+where data need a JSON Object like:
+
+```javascript
+var myFileDatas = [{
 'type': 'image',
 'source': 'url',
 'path': 'http://example.com/images/cat.png',
@@ -35,23 +38,20 @@ var data = [{
 
 If you like to share:
 
-1. **Text**
+1.**Text**
 
 ```javascript
-cobalt.share({
-data: [{
+var myFileDatas = [{
 'type': 'text',
 'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYX',
-//'title': 'alphabet'
-}]
-}, 'callback');
+'title': 'alphabet'
+}];
 ```
 
-2. **Contact**
+2.**Contact**
 
 ```javascript
-cobalt.share({
-data: [{
+var myFileDatas = [{
 'type': 'contact',
 'name': 'Jean Paul',
 'mobile': "0102030405",
@@ -60,50 +60,48 @@ data: [{
 'postal': '1 City Hall SQ, RM 612, Boston, etc.', // optional
 'job': 'Human Resources', // optional
 'detail': 'foo', // optional
-}]
-}, 'callback');
+}];
 ```
 
-3. **Image**
+3.**Image**
 
 ```javascript
-cobalt.share({
-data: [{
+var myFileDatas = [{
 'type': 'image',
 'source': 'url',
 'path': 'http://example.com/images/cat.png',
 'title': 'Cat', // optional
 'detail': "playing with a goldfish" // optional
-}]
-}, 'callback');
+}];
 ```
 
-4. **Others examples with different source or file type**
-
-Share a document stored in App local files (common assets (Android) or bundle (iOs))
+4.**Share a local document stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle**
 
 ```javascript
-var data = [{
+var myFileDatas = [{
 'type': 'document',
 'source': 'local',
 'path': 'files/sample.pdf',
 }];
 ```
 
-Share a video from web
+5.**Share a remote video**
 
 ```javascript
-cobalt.share({
-data: [{
+var myFileDatas = [{
 'type': 'video',
 'source': 'url',
 'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
 'title': 'big buck bunny', // optional
-}]
-}, 'callback');
+}];
 ```
 
-### Current full returned fields are :
+And then:
+```javascript
+cobalt.share({data: myFileData});
+```
+
+### Existing fields to fill are :
 
 | Field | Description | Examples Values | Mandatory |
 | ----- | ---- | ----------- | ----------- |
