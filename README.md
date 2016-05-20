@@ -1,6 +1,6 @@
 # Share Plugin
 
-ShareIntent plugin allows you to share file from the web or internal application data.
+Share plugin allows you to share file from the web or internal application data.
 
 ## How to use
 
@@ -13,13 +13,13 @@ ShareIntent plugin allows you to share file from the web or internal application
 use the `cobalt.share` shortcut like this:
 
 ```javascript
-cobalt.share(data: myFileDatas);
+cobalt.share({data: myFileDatas});
 ```
 
 or with a callback:
 
 ```javascript
-cobalt.share(data: myFileDatas, function(result){...});
+cobalt.share({data: myFileDatas}, function(result){...});
 ```
 
 where data need a JSON Object like:
@@ -98,7 +98,7 @@ var myFileDatas = [{
 
 And then:
 ```javascript
-cobalt.share({data: myFileData});
+cobalt.share({data: myFileDatas});
 ```
 
 ### Existing fields to fill are :
@@ -108,8 +108,8 @@ cobalt.share({data: myFileData});
 | source | source from where the file comes | 'url', 'local' | YES |
 | path | local/remote path of the file     | 'http://example.com/pixel.png', 'files/pixel.png' | YES |
 | type | file type   | 'text', 'image', 'contact', 'document', 'audio', 'video', 'data'| YES |
-| name | contact name     | 'Jean Paul' | YES |
-| mobile | contact number     | '+33201050602' | YES |
+| name | contact name     | 'Jean Paul' | NO |
+| mobile | contact number     | '+33201050602' | NO |
 | email | contact email     | 'jeanpaul@example.com' | NO |
 | company | contact company     | 'Jp Corp.' | NO |
 | postal | contact postal    | '1 City Hall SQ, RM 612, Boston' | NO |
