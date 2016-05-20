@@ -77,7 +77,7 @@ var myFileDatas = [{
 
 4.**Share a local document**
 
-The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle**
+The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
 
 ```javascript
 var myFileDatas = [{
