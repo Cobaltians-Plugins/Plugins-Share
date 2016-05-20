@@ -43,7 +43,7 @@ If you like to share:
 ```javascript
 var myFileDatas = [{
 'type': 'text',
-'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYX',
+'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 'title': 'alphabet'
 }];
 ```
