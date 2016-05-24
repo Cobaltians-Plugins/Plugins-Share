@@ -43,7 +43,7 @@ If you like to share:
 ```javascript
 var myFileDatas = [{
 'type': 'text',
-'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYX',
+'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 'title': 'alphabet'
 }];
 ```
@@ -75,7 +75,9 @@ var myFileDatas = [{
 }];
 ```
 
-4.**Share a local document stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle**
+4.**Share a local document**
+
+The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
 
 ```javascript
 var myFileDatas = [{
