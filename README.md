@@ -13,25 +13,25 @@ Share plugin allows you to share file from the web or internal application data.
 use the `cobalt.share` shortcut like this:
 
 ```javascript
-cobalt.share({data: myFileDatas});
+cobalt.share(myFileDatas);
 ```
 
 or with a callback:
 
 ```javascript
-cobalt.share({data: myFileDatas}, function(result){...});
+cobalt.share(myFileDatas, function(result){...});
 ```
 
 where data need a JSON Object like:
 
 ```javascript
-var myFileDatas = [{
+var myFileDatas = {
 'type': 'image',
 'source': 'url',
 'path': 'http://example.com/images/cat.png',
 'title': 'Cat', // optional
 'detail': "playing with a goldfish" // optional
-}];
+};
 ```
 
 ### Examples
@@ -41,17 +41,17 @@ If you like to share:
 1.**Text**
 
 ```javascript
-var myFileDatas = [{
+var myFileDatas = {
 'type': 'text',
 'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 'title': 'alphabet'
-}];
+};
 ```
 
 2.**Contact**
 
 ```javascript
-var myFileDatas = [{
+var myFileDatas = {
 'type': 'contact',
 'name': 'Jean Paul',
 'mobile': "0102030405",
@@ -60,19 +60,19 @@ var myFileDatas = [{
 'postal': '1 City Hall SQ, RM 612, Boston, etc.', // optional
 'job': 'Human Resources', // optional
 'detail': 'foo', // optional
-}];
+};
 ```
 
 3.**Image**
 
 ```javascript
-var myFileDatas = [{
+var myFileDatas = {
 'type': 'image',
 'source': 'url',
 'path': 'http://example.com/images/cat.png',
 'title': 'Cat', // optional
 'detail': "playing with a goldfish" // optional
-}];
+};
 ```
 
 4.**Share a local document**
@@ -80,27 +80,27 @@ var myFileDatas = [{
 The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
 
 ```javascript
-var myFileDatas = [{
+var myFileDatas = {
 'type': 'document',
 'source': 'local',
 'path': 'files/sample.pdf',
-}];
+};
 ```
 
 5.**Share a remote video**
 
 ```javascript
-var myFileDatas = [{
+var myFileDatas = {
 'type': 'video',
 'source': 'url',
 'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
 'title': 'big buck bunny', // optional
-}];
+};
 ```
 
 And then:
 ```javascript
-cobalt.share({data: myFileDatas});
+cobalt.share(myFileDatas);
 ```
 
 ### Existing fields to fill are :
