@@ -1,6 +1,6 @@
 # Share Plugin
 
-Share plugin allows you to share file from the web or internal application data.
+Share plugin allows you to share content or files from the web or internal application data to other applications.
 
 ## How to use
 
@@ -19,13 +19,13 @@ cobalt.share(myFileDatas);
 or with a callback:
 
 ```javascript
-cobalt.share(myFileDatas, function(result){...});
+cobalt.share(myContent, function(result){...});
 ```
 
 where data need a JSON Object like:
 
 ```javascript
-var myFileDatas = {
+var myContent = {
 'type': 'image',
 'source': 'url',
 'path': 'http://example.com/images/cat.png',
@@ -41,7 +41,7 @@ If you like to share:
 1.**Text**
 
 ```javascript
-var myFileDatas = {
+var myContent = {
 'type': 'text',
 'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 'title': 'alphabet'
@@ -51,7 +51,7 @@ var myFileDatas = {
 2.**Contact**
 
 ```javascript
-var myFileDatas = {
+var myContent = {
 'type': 'contact',
 'name': 'Jean Paul',
 'mobile': "0102030405",
@@ -66,7 +66,7 @@ var myFileDatas = {
 3.**Image**
 
 ```javascript
-var myFileDatas = {
+var myContent = {
 'type': 'image',
 'source': 'url',
 'path': 'http://example.com/images/cat.png',
@@ -80,7 +80,7 @@ var myFileDatas = {
 The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
 
 ```javascript
-var myFileDatas = {
+var myContent = {
 'type': 'document',
 'source': 'local',
 'path': 'files/sample.pdf',
@@ -90,7 +90,7 @@ var myFileDatas = {
 5.**Share a remote video**
 
 ```javascript
-var myFileDatas = {
+var myContent = {
 'type': 'video',
 'source': 'url',
 'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
@@ -100,7 +100,7 @@ var myFileDatas = {
 
 And then:
 ```javascript
-cobalt.share(myFileDatas);
+cobalt.share(myContent);
 ```
 
 ### Existing fields to fill are :
