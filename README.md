@@ -16,12 +16,6 @@ use the `cobalt.share` shortcut like this:
 cobalt.share(myFileDatas);
 ```
 
-or with a callback:
-
-```javascript
-cobalt.share(myContent, function(result){...});
-```
-
 where data need a JSON Object like:
 
 ```javascript
