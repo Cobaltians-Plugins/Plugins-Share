@@ -32,9 +32,9 @@ var myContent = {
 
 | Field | Description | Examples Values | Mandatory |
 | ----- | ---- | ----------- | ----------- |
+| type | file type   | one of `text`, `image`, `contact`, `document`, `audio`, `video`, `data` | YES |
 | source | source from where the file comes | 'url', 'local' | YES |
 | path | local/remote path of the file     | 'http://example.com/pixel.png', 'files/pixel.png' | YES |
-| type | file type   | 'text', 'image', 'contact', 'document', 'audio', 'video', 'data'| YES |
 | name | contact name     | 'Jean Paul' | NO |
 | mobile | contact number     | '+33201050602' | NO |
 | email | contact email     | 'jeanpaul@example.com' | NO |
