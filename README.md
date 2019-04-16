@@ -86,7 +86,7 @@ cobalt.share({
 
 4.**Share a local document**
 
-The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
+The document path starts at "app/src/main/assets/" on Android or in bundle root folder on iOS.
 
 ```javascript
 cobalt.share({
