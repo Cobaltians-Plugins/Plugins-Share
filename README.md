@@ -28,76 +28,7 @@ var myContent = {
 };
 ```
 
-### Examples
-
-If you like to share:
-
-1.**Text**
-
-```javascript
-var myContent = {
-'type': 'text',
-'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-'title': 'alphabet'
-};
-```
-
-2.**Contact**
-
-```javascript
-var myContent = {
-'type': 'contact',
-'name': 'Jean Paul',
-'mobile': "0102030405",
-'email': 'jeanpaul@example.com', // optional
-'company': 'Cobaltians', // optional
-'postal': '1 City Hall SQ, RM 612, Boston, etc.', // optional
-'job': 'Human Resources', // optional
-'detail': 'foo', // optional
-};
-```
-
-3.**Image**
-
-```javascript
-var myContent = {
-'type': 'image',
-'source': 'url',
-'path': 'http://example.com/images/cat.png',
-'title': 'Cat', // optional
-'detail': "playing with a goldfish" // optional
-};
-```
-
-4.**Share a local document**
-
-The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
-
-```javascript
-var myContent = {
-'type': 'document',
-'source': 'local',
-'path': 'files/sample.pdf',
-};
-```
-
-5.**Share a remote video**
-
-```javascript
-var myContent = {
-'type': 'video',
-'source': 'url',
-'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
-'title': 'big buck bunny', // optional
-};
-```
-
-And then:
-```javascript
-cobalt.share(myContent);
-```
-
-### Existing fields to fill are :
+### Fields description :
 
 | Field | Description | Examples Values | Mandatory |
 | ----- | ---- | ----------- | ----------- |
@@ -113,6 +44,65 @@ cobalt.share(myContent);
 | title | contact title    | 'This is something' | NO |
 | detail | contact detail    | 'Some comments about this' | NO |
 
-## Want more ?
 
-If you have any ideas or improvements to propose, please feel free to do so in the issues tracker!
+### Copy/paste examples
+
+1.**Share some text**
+
+```javascript
+cobalt.share({
+'type': 'text',
+'content': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+'title': 'alphabet'
+});
+```
+
+2.**Share a contact**
+
+```javascript
+cobalt.share({
+'type': 'contact',
+'name': 'Jean Paul',
+'mobile': "0102030405",
+'email': 'jeanpaul@example.com', // optional
+'company': 'Cobaltians', // optional
+'postal': '1 City Hall SQ, RM 612, Boston, etc.', // optional
+'job': 'Human Resources', // optional
+'detail': 'foo', // optional
+});
+```
+
+3.**Share an image**
+
+```javascript
+cobalt.share({
+'type': 'image',
+'source': 'url',
+'path': 'http://example.com/images/cat.png',
+'title': 'Cat', // optional
+'detail': "playing with a goldfish" // optional
+});
+```
+
+4.**Share a local document**
+
+The document must be stored in "app/src/main/assets/files/samples.pdf" (Android) or in iOS bundle
+
+```javascript
+cobalt.share({
+'type': 'document',
+'source': 'local',
+'path': 'files/sample.pdf',
+});
+```
+
+5.**Share a remote video**
+
+```javascript
+cobalt.share({
+'type': 'video',
+'source': 'url',
+'path': "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+'title': 'big buck bunny', // optional
+});
+```
